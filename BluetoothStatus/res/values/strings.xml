@@ -1,5 +1,17 @@
 <resources>
 
     <string name="app_name">Bluetooth status for tasker</string>
+    <string name="profile_select_title">Detect Profile</string>
+    <string name="profile_item_audio">Audio(A2DP)</string>
+    <string name="profile_item_headset">Headset(HFP/HSP)</string>
+    <string name="profile_item_health">Health</string>
+    <string name="profile_item_gatt">GATT</string>
+    <string name="profile_item_gattserver">GATT Server</string>
+    <string name="profile_item_any">Any</string>
 
+    <string name="profile_select_positive">OK</string>
+    <string name="profile_select_negative">Cancel</string>
+
+	<string name="action_save_profile">Save</string>
+	<string name="action_cancel_edit_condition">Cancel</string>
 </resources>
