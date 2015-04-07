@@ -3,6 +3,7 @@
 	<name>BluetoothStatus</name>
 	<comment></comment>
 	<projects>
+		<project>locale-api</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

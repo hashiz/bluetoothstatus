@@ -1,6 +1,7 @@
 package jp.meridiani.apps.bluetoothstatus;
 
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothClass;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
 import android.bluetooth.BluetoothProfile;
@@ -24,7 +25,7 @@ public class QueryConditionReceiver extends BroadcastReceiver {
 		}
 		Profile profile = bundle.getProfile();
 		BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
-		BluetoothManager manager = context.getApplicationContext().getSystemService(name)
+		BluetoothManager manager = (BluetoothManager)context.getApplicationContext().getSystemService(Context.BLUETOOTH_SERVICE);
 		if (adapter == null) {
 			return;
 		}
@@ -45,7 +46,10 @@ public class QueryConditionReceiver extends BroadcastReceiver {
 			return false;
 		}
 		for (BluetoothDevice device : adapter.getBondedDevices()) {
-			device.
+			if (device.getBluetoothClass().getMajorDeviceClass() == BluetoothClass.Device.AUDIO_VIDEO_HIFI_AUDIO) {
+				return true;
+			}
 		}
+		return false;
 	}
 }
